@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#D10505"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtAppHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#8E8E8E"
+        android:text="SimpleCalc"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtValor1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="80dp"
+        android:text="Valor 1:"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtValor2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="48dp"
+        android:text="Valor 2:"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/inputValor1"
+        app:layout_constraintTop_toBottomOf="@+id/inputValor1" />
+
+    <EditText
+        android:id="@+id/inputValor1"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:text="0"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/txtValor1"
+        app:layout_constraintTop_toBottomOf="@+id/txtValor1" />
+
+    <EditText
+        android:id="@+id/inputValor2"
+        android:layout_width="325dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:text="0"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="@+id/txtValor2"
+        app:layout_constraintTop_toBottomOf="@+id/txtValor2" />
+    <Button
+        android:id="@+id/bttnSoma"
+        android:layout_width="60dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="36dp"
+        android:text="+"
+        app:layout_constraintStart_toStartOf="@+id/inputValor2"
+        app:layout_constraintTop_toBottomOf="@+id/inputValor2" />
+
+    <Button
+        android:id="@+id/bttnSubtrai"
+        android:layout_width="60dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/bttnSoma"
+        app:layout_constraintTop_toBottomOf="@+id/inputValor2" />
+
+    <Button
+        android:id="@+id/bttnDiv"
+        android:layout_width="60dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="36dp"
+        android:text="/"
+        app:layout_constraintEnd_toEndOf="@+id/inputValor2"
+        app:layout_constraintTop_toBottomOf="@+id/inputValor2" />
+
+    <Button
+        android:id="@+id/bttnMul"
+        android:layout_width="60dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="12dp"
+        android:text="*"
+        app:layout_constraintEnd_toStartOf="@+id/bttnDiv"
+        app:layout_constraintTop_toBottomOf="@+id/inputValor2" />
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:text="O Resultado é:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bttnSubtrai" />
+</androidx.constraintlayout.widget.ConstraintLayout>
