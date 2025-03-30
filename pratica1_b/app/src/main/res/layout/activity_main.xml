@@ -68,7 +68,7 @@
             android:layout_height="47dp"
             android:layout_marginStart="210dp"
             android:layout_marginTop="49dp"
-            android:text=" * " />
+            android:text="*" />
 
         <Button
             android:id="@+id/bttn0"
@@ -82,7 +82,7 @@
             android:layout_width="60dp"
             android:layout_height="47dp"
             android:layout_marginLeft="210dp"
-            android:text=" / "
+            android:text="/"
             tools:layout_editor_absoluteY="331dp" />
 
         <Button
@@ -91,7 +91,7 @@
             android:layout_height="47dp"
             android:layout_marginStart="210dp"
             android:layout_marginTop="98dp"
-            android:text=" - "
+            android:text="-"
             tools:layout_editor_absoluteX="139dp"
             tools:layout_editor_absoluteY="441dp" />
 
@@ -101,7 +101,7 @@
             android:layout_height="47dp"
             android:layout_marginStart="210dp"
             android:layout_marginTop="147dp"
-            android:text=" + "
+            android:text="+"
             tools:layout_editor_absoluteX="159dp"
             tools:layout_editor_absoluteY="473dp" />
 

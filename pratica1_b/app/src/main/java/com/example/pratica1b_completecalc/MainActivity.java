@@ -13,11 +13,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText display;
-    boolean exceptionReached = false;
+    boolean answered = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     // Clear if an exception text was displayed.
-                    if(exceptionReached)
+                    if(answered)
                         display.setText("");
-                    exceptionReached = false;
+                    answered = false;
 
                     display.getText().append(button.getText());
                 }
@@ -65,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
                     return;
 
                 // Clear if an exception text was displayed.
-                if(exceptionReached)
+                if(answered)
                     display.setText("");
-                exceptionReached = false;
+                answered = false;
 
                 display.setText(display.getText().subSequence(0, display.getText().length()-1));
             }
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 display.setText("");
-                exceptionReached = false;
+                answered = false;
             }
         });
 
@@ -88,7 +90,20 @@ public class MainActivity extends AppCompatActivity {
         eq.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String[] math = display.getText().toString().split("\\s+");
+                answered = true;
+
+                Pattern regexPattern = Pattern.compile("(-?\\d+(?:\\.\\d+)?)\\s*([-+/*])\\s*(-?\\d+(?:\\.\\d+)?)");
+                Matcher regexMatcher = regexPattern.matcher(display.getText().toString());
+
+                String[] math = new String[3];
+                if (regexMatcher.matches()) {
+                    math[0] = regexMatcher.group(1);
+                    math[1] = regexMatcher.group(2);
+                    math[2] = regexMatcher.group(3);
+                } else {
+                    display.setText("Operação Inválida!");
+                    return;
+                }
 
                 switch(math[1]) {
                     case "+":
@@ -101,10 +116,9 @@ public class MainActivity extends AppCompatActivity {
                         display.setText("" + (Double.parseDouble(math[0]) * Double.parseDouble(math[2])));
                         break;
                     case "/":
-                        if(Double.parseDouble(math[2]) == 0) {
+                        if(Double.parseDouble(math[2]) == 0)
                             display.setText("Operação Impossível: divisão por zero.");
-                            exceptionReached = true;
-                        } else
+                        else
                             display.setText("" + (Double.parseDouble(math[0]) / Double.parseDouble(math[2])));
                         break;
                 }
