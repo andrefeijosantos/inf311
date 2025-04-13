@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelatorioNutricional">
+
+    <TextView
+        android:id="@+id/headerRelatorio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#B4B4B4"
+        android:text="Prática 2 - IMCCalc"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtRelatorioNutricional"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Relatório Nutricional"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:typeface="serif"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerRelatorio" />
+
+    <TextView
+        android:id="@+id/txtRelatorioNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:text="Nome: "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRelatorioNutricional" />
+
+    <TextView
+        android:id="@+id/txtRelatorioIdade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="Idade:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRelatorioNome" />
+
+    <TextView
+        android:id="@+id/txtRelatorioPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Peso:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtRelatorioIdade"
+        app:layout_constraintTop_toBottomOf="@+id/txtRelatorioIdade" />
+
+    <TextView
+        android:id="@+id/txtRelatorioAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Altura:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtRelatorioIdade"
+        app:layout_constraintTop_toBottomOf="@+id/txtRelatorioPeso" />
+
+    <TextView
+        android:id="@+id/txtRelatorioIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="IMC:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtRelatorioIdade"
+        app:layout_constraintTop_toBottomOf="@+id/txtRelatorioAltura" />
+
+    <TextView
+        android:id="@+id/txtRelatorioClassificacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Classificação:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtRelatorioIdade"
+        app:layout_constraintTop_toBottomOf="@+id/txtRelatorioIMC" />
+
+    <TextView
+        android:id="@+id/outputIdade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/outputNome"
+        app:layout_constraintTop_toTopOf="@+id/txtRelatorioIdade" />
+
+    <TextView
+        android:id="@+id/outputPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/outputNome"
+        app:layout_constraintTop_toTopOf="@+id/txtRelatorioPeso" />
+
+    <TextView
+        android:id="@+id/outputAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/outputNome"
+        app:layout_constraintTop_toTopOf="@+id/txtRelatorioAltura" />
+
+    <TextView
+        android:id="@+id/outputClassificacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txtRelatorioClassificacao"
+        app:layout_constraintTop_toTopOf="@+id/txtRelatorioClassificacao" />
+
+    <TextView
+        android:id="@+id/outputIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/outputNome"
+        app:layout_constraintTop_toTopOf="@+id/txtRelatorioIMC" />
+
+    <TextView
+        android:id="@+id/outputNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/txtRelatorioNome"
+        app:layout_constraintTop_toTopOf="@+id/txtRelatorioNome" />
+
+    <Button
+        android:id="@+id/bttnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Realizar Novo Cálculo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRelatorioClassificacao" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
