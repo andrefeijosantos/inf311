@@ -204,7 +204,7 @@ public class LocationActivity extends AppCompatActivity implements OnMapReadyCal
             CURR_MARKER = map.addMarker(new MarkerOptions().position(CURR).title("Minha localização atual")
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
 
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(currCoords, 12));
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(currCoords, 16));
         }
     }
 }

@@ -29,9 +29,10 @@ public class Relatorio extends ListActivity {
         if (cursor.getCount() > 0)
             while (cursor.moveToNext()) {
                 int idLocation = cursor.getInt(cursor.getColumnIndexOrThrow("idLocation"));
-                ids.add(idLocation);
                 String msg = cursor.getString(cursor.getColumnIndexOrThrow("msg"));
                 String timestamp = cursor.getString(cursor.getColumnIndexOrThrow("timestamp"));
+
+                ids.add(idLocation);
                 logs.add(msg + " - " + timestamp);
             }
 
